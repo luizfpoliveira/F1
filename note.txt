@@ -1,0 +1,27 @@
+curl --request GET \
+    --url 'https://v1.formula-1.api-sports.io/races?season=2023&type=Race' \
+    --header 'x-rapidapi-host: v1.formula-1.api-sports.io' \
+    --header 'x-rapidapi-key: b77b462a71e6b4ce80414dd6fd3aee81'
+
+
+API_KEY: b77b462a71e6b4ce80414dd6fd3aee81
+BASE_URL: https://v1.formula-1.api-sports.io/
+
+
+stepzen import curl --request GET \
+    --url 'https://v1.formula-1.api-sports.io/races?season=2023&type=Race' \
+    --header 'x-rapidapi-host: v1.formula-1.api-sports.io' \
+    --header 'x-rapidapi-key: b77b462a71e6b4ce80414dd6fd3aee81'\
+		--query-name "races" \
+		--query-type "Race" \
+		--name "races"
+
+
+		stepzen import curl --request GET \
+    --url 'https://v1.formula-1.api-sports.io/rankings/races?race=50' \
+    --header 'x-rapidapi-host: v1.formula-1.api-sports.io' \
+    --header 'x-rapidapi-key: b77b462a71e6b4ce80414dd6fd3aee81' \
+		--query-name "raceRankings" \
+		--query-type "RaceRankings" \
+		--name "raceRankings" \
+		--prefix "rank"
